@@ -28,6 +28,9 @@ class Controller
             throw new Exception("O método {$method} não existe no {$namespaceController}");
         }
 
+        $params = new ControllerParams($route);
+        $params = $params->get($route);
+
         $controller->$method();
     }
 }

@@ -2,10 +2,10 @@
 
 namespace App\Controllers;
 
-class UserController
+class UserController extends Controller
 {
-    public function index()
+    public function edit()
     {
-        dd('Index do UserController');
+        return $this->view('user', ['name' => 'Yuriohh']);
     }
 }
