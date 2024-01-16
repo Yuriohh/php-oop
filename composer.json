@@ -8,7 +8,9 @@
         "psr-4": {
             "App\\":"app/"
         },
-        "files": []
+        "files": [
+            "app/helpers/json.php"
+        ]
     },
     "config": {
         "optimize-autoloader": true
