@@ -31,6 +31,6 @@ class Controller
         $params = new ControllerParams($route);
         $params = $params->get($route);
 
-        $controller->$method();
+        $controller->$method($params);
     }
 }
