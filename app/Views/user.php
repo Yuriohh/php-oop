@@ -1,8 +1,14 @@
 <?php $this->layout('master', ['title' => 'User Profile']) ?>
 
-<?= $this->start('css'); ?>
-    <link rel="stylesheet" href="/css/user.css">
-<?= $this->stop(); ?>
-
 <h1>User Profile</h1>
-<p>Hello, <?=$this->e($name)?></p>
+
+<form action="/user/update/12" method="post">
+
+    <input type="text" name="firstName" value="Yuriohh">
+    <input type="text" name="lastName" value="Lima">
+    <input type="text" name="email" value="yuriohh@teste.com">
+    <input type="password" name="password" value="987654321">
+
+    <button type="submit">Atualizar</button>
+
+</form>
