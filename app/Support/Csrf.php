@@ -25,7 +25,7 @@ class Csrf
 
         $token = Request::only('token');
 
-        if ($token['token'] !== $_SESSION['token']) {
+        if (empty($token) || $token['token'] !== $_SESSION['token']) {
             throw new \Exception('Token Inválido');
         }
 
