@@ -7,16 +7,16 @@
 
     <?= csrf() ?>
 
-    <?= flash('firstName') ?>
+    <?= flash('firstName', 'color:red') ?>
     <input type="text" name="firstName" value="Yuriohh">
 
-    <?= flash('lastName') ?>
+    <?= flash('lastName', 'color:red') ?>
     <input type="text" name="lastName" value="Lima">
 
-    <?= flash('email') ?>
+    <?= flash('email', 'color:red') ?>
     <input type="text" name="email" value="yuriohh@teste.com">
 
-    <?= flash('password') ?>
+    <?= flash('password', 'color:red') ?>
     <input type="password" name="password" value="987654321">
 
     <button type="submit">Atualizar</button>

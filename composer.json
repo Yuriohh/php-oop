@@ -9,7 +9,10 @@
             "App\\":"app/"
         },
         "files": [
-            "app/helpers/json.php"
+            "app/helpers/csrf.php",
+            "app/helpers/json.php",
+            "app/helpers/flash.php",
+            "app/helpers/redirect.php"
         ]
     },
     "config": {
