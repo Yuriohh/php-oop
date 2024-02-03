@@ -5,5 +5,5 @@ function flash(string $key, string $css = '')
 {
     $message = Flash::get($key);
 
-    return "<span class='{$css}'>{$message}</span>";
+    return "<span style='{$css}'>{$message}</span>";
 }
