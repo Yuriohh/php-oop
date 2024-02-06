@@ -14,8 +14,6 @@ abstract class Model
     protected string $table = '';
     private string $filters = '';
 
-    private string $pagination = '';
-
     public function setFields(string $fields)
     {
         $this->fields = $fields;
