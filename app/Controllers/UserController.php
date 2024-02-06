@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Core\Request;
-use App\Support\Csrf;
+use App\Database\Models\User;
+use App\Support\Validate;
 
 class UserController extends Controller
 {
@@ -14,7 +14,17 @@ class UserController extends Controller
 
     public function update(array $params)
     {
-        Csrf::validateToken();
-        //dd(Request::only(['lastName', 'firstName']));
+        $validate = new Validate();
+        $validated = $validate->validate([
+            'firstName' => 'required',
+            'lastName' => 'required',
+            'email' => 'required|email|unique:' . User::class,
+            'password' => 'required|maxLen:10'
+        ]);
+
+        if (!$validated) {
+            return redirect('/user/1');
+        }
+
     }
 }
