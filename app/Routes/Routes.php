@@ -11,9 +11,13 @@ class Routes
                 '/' => 'HomeController@index',
                 '/user/[0-9]+' => 'UserController@edit',
                 '/register' => 'RegisterController@index',
-                '/product/[a-z]+/category/[a-z]+' => 'ProductController@show'
+                '/product/[a-z]+/category/[a-z]+' => 'ProductController@show',
+                '/contact' => 'ContactController@index',
             ],
-            'post' => [],
+            'post' => [
+                '/user/update/[0-9]+' => 'UserController@update',
+                '/contact' => 'ContactController@send',
+            ],
         ];
     }
 }
