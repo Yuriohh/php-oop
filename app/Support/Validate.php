@@ -46,15 +46,15 @@ class Validate
         foreach ($fields as $field => $validation) {
             if (!str_contains($validation, '|')) {
                 $param = '';
-            
+
                 [$validation, $param] = $this->getParam($validation, $param);
 
                 $this->validationExist($validation);
 
                 $this->fieldsValidated[$field] = $this->$validation($field, $param);
-            } 
-            
-            if(str_contains($validation, '|')) {
+            }
+
+            if (str_contains($validation, '|')) {
                 $validations = explode('|', $validation);
                 $param = '';
 
@@ -63,7 +63,7 @@ class Validate
 
         }
 
-        return $this->returnValidation($this->fieldsValidated);
+        return $this->returnValidation();
     }
 
     private function returnValidation()

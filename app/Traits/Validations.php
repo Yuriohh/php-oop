@@ -42,4 +42,19 @@ trait Validations
 
         return strip_tags($data, '<p><b><span><em>');
     }
+
+    public function unique($field, $param)
+    {
+        $data = Request::input($field);
+        $model = new $param();
+
+        $registerFound = $model->findBy($field, $data);
+
+        if($registerFound) {
+            Flash::set($field, "O {$field} já esta em uso");
+            return null;
+        }
+
+        return strip_tags($data, '<p><b><span><em>');
+    }
 }
